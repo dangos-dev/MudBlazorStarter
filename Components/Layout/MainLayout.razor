@@ -1,0 +1,43 @@
+﻿@inherits LayoutComponentBase
+
+<MudStack Row="true">
+
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+
+    <div class="content">
+        @Body
+    </div>
+
+</MudStack>
+
+<MudThemeProvider Theme="_blazorBrandTheme"/>
+<MudPopoverProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+@code {
+
+    readonly MudTheme _blazorBrandTheme = new() {
+        PaletteLight = new PaletteLight {
+            Primary = "#512bd4",
+            Secondary = "#007bff",
+            AppbarBackground = "#2a146b",
+            Success = "#28a745",
+            Background = "#f8f9fa",
+            Surface = "#ffffff",
+            TextPrimary = "#212529",
+            DrawerBackground = "#ffffff",
+            PrimaryContrastText = "#ffffff",
+            HoverOpacity = 0.1
+        },
+
+        LayoutProperties = new LayoutProperties {
+            DrawerWidthLeft = "280px",
+            DrawerWidthRight = "320px",
+            AppbarHeight = "80px"
+        }
+    };
+
+}
